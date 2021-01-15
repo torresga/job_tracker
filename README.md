@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+A CRM (Customer Relationship Management) for Software Engineers looking for their next job. React front-end, RoR backend
