@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_20_161119) do
+ActiveRecord::Schema.define(version: 2021_01_20_195419) do
 
   create_table "answers", force: :cascade do |t|
     t.text "body"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2021_01_20_161119) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "company_type"
     t.string "industry"
     t.string "product"
     t.text "comments"
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 2021_01_20_161119) do
     t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "company_id"
+    t.index ["company_id"], name: "index_employees_on_company_id"
   end
 
   create_table "interview_processes", force: :cascade do |t|
@@ -68,4 +70,5 @@ ActiveRecord::Schema.define(version: 2021_01_20_161119) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "employees", "companies"
 end
