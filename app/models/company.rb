@@ -1,8 +1,8 @@
 class Company < ApplicationRecord
-  has_many :employees, depend: :destroy
-  has_many :applications, depend: :destroy
+  has_many :employees, dependent: :destroy
+  has_many :applications, dependent: :destroy
 
   validates :name, presence: true
-  validates :type, presence: true
+  validates :company_type, presence: true
   validates :industry, presence: true
 end
