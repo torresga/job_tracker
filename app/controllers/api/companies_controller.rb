@@ -22,6 +22,11 @@ class Api::CompaniesController < ApplicationController
   end
 
   def destroy
+    company = Company.find(params[:id])
+
+    company.destroy
+
+    render json: { message: "Company deleted" }
   end
 
   private
