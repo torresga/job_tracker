@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Applications from "../components/Applications";
 import Interviews from "../components/Interviews";
 import Companies from "../components/Companies";
+import NewCompany from "../components/NewCompany";
 
 
 function App() {
@@ -14,11 +15,15 @@ function App() {
         <Link to="/">Companies</Link>
         <Link to="/applications">Applications</Link>
         <Link to="/interviews">Interviews</Link>
+        <Link to="/companies/new">Add a company</Link>
       </nav>
 
       <Switch>
         <Route path="/applications" component={Applications} />
         <Route path="/interviews" component={Interviews} />
+        <Route path="/companies/new">
+          <NewCompany />
+        </Route>
         <Route path="/">
           <Companies />
         </Route>

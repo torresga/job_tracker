@@ -1,5 +1,6 @@
 import React from 'react';
 import { Tab, Tabs, Row, Col, Nav, Button } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 import CompanyData from '../components/CompanyData';
 
 class Companies extends React.Component {
@@ -256,6 +257,7 @@ class Companies extends React.Component {
            <Col sm={9}>
              <Tab.Content>
               <Tab.Pane eventKey={company.name}>
+                <Link to="/companies/new">Add a new Company</Link>
                 <CompanyData data={company} />
               </Tab.Pane>
              </Tab.Content>
