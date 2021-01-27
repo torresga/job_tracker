@@ -18,24 +18,27 @@ function CompanyData(props) {
         <Button variant="primary" href={editProfileUrl}>Edit company profile</Button>
         <Profile
           name={props.data.name}
-          companyType={props.data.profile.companyType}
-          industry={props.data.profile.industry}
-          product={props.data.profile.product}
-          comments={props.data.profile.comments}
+          companyType={props.data.companyType}
+          industry={props.data.industry}
+          product={props.data.product}
+          comments={props.data.comments}
         />
       </Tab>
       <Tab eventKey="employees" title="Employees">
         Under this tab will be a list of employees
         <Button variant="primary" url={addEmployeeUrl}>Add a new employee</Button>
-        <ul>
+        {/*
+          <ul>
           {props.data.employees.map((employee) => (
             <li key={employee.id}><Employee employee={employee} /></li>
           ))}
         </ul>
+        */}
       </Tab>
       <Tab eventKey="applications" title="Applications">
         Under this tab will be a list of applications, plus a list of materials
         <Button variant="primary" href={addApplicationUrl}>Add a new application</Button>
+        {/*
         <ul>
           {props.data.applications.map((application) => (
             <li key={application.id}>
@@ -51,11 +54,13 @@ function CompanyData(props) {
             </li>
           ))}
         </ul>
+        */}
       </Tab>
       <Tab eventKey="interview" title="Interviews">
         Under this tab will be a list of interviews, with the following
         characteristics: type, conducted_by, questions, comments
         <Button variant="primary" href={addInterviewUrl}>Add a new interview</Button>
+        {/*
         {props.data.applications.map((application) => (
           <div key={application.id}>
             {application.interviews.map((interview) => (
@@ -69,6 +74,7 @@ function CompanyData(props) {
             ))}
           </div>
         ))}
+        */}
       </Tab>
     </Tabs>
   );
