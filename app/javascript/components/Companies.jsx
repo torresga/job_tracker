@@ -31,27 +31,39 @@ class Companies extends React.Component {
 
   render() {
     return (
-       <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-         {this.state.companies.map((company) => (
-           <Row key={company.id}>
-           <Col sm={3}>
-             <Nav variant="pills" className="flex-column">
-              <Nav.Item>
-                <Nav.Link eventKey={company.name}>{company.name}</Nav.Link>
-              </Nav.Item>
-             </Nav>
-           </Col>
-           <Col sm={9}>
-             <Tab.Content>
-              <Tab.Pane eventKey={company.name}>
-                <Link to="/companies/new">Add a new Company</Link>
-                <CompanyData data={company} />
-              </Tab.Pane>
-             </Tab.Content>
-           </Col>
-          </Row>
-          ))}
-       </Tab.Container>
+      <>
+      <Row className="p-3">
+        <Col>
+          <h1>Companies</h1>
+        </Col>
+        <Col className="d-flex justify-content-end">
+          <Link to="/companies/new">Add a new Company</Link>
+        </Col>
+      </Row>
+      <Tab.Container id="left-tabs-example" defaultActiveKey="0">
+        <Row>
+          <Col sm={3}>
+            <Nav variant="pills" className="flex-column">
+              {this.state.companies.map((company, index) => (
+                <Nav.Item>
+                  <Nav.Link eventKey={String(index)}>{company.name}</Nav.Link>
+                </Nav.Item>
+              ))}
+            </Nav>
+          </Col>
+          <Col sm={9}>
+            <Tab.Content>
+              {this.state.companies.map((company, index) => (
+                <Tab.Pane eventKey={String(index)}>
+                  <CompanyData data={company} />
+                </Tab.Pane>
+              ))}
+            </Tab.Content>
+          </Col>
+        </Row>
+      </Tab.Container>
+
+       </>
     );
   }
 }
