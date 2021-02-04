@@ -1,3 +1,14 @@
 // Place all the styles related to the Homepage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+body {
+  background-color: #F3F6FA !important;
+}
+
+.top-nav,
+.companies {
+  background-color: white;
+  border-bottom: 3px solid #E1EDFF;
+  border-radius: 5px;
+}
