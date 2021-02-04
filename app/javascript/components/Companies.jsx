@@ -45,7 +45,7 @@ class Companies extends React.Component {
           <Col sm={3}>
             <Nav variant="pills" className="flex-column">
               {this.state.companies.map((company, index) => (
-                <Nav.Item>
+                <Nav.Item key={index}>
                   <Nav.Link eventKey={String(index)}>{company.name}</Nav.Link>
                 </Nav.Item>
               ))}
@@ -54,7 +54,7 @@ class Companies extends React.Component {
           <Col sm={9}>
             <Tab.Content>
               {this.state.companies.map((company, index) => (
-                <Tab.Pane eventKey={String(index)}>
+                <Tab.Pane key={index} eventKey={String(index)}>
                   <CompanyData data={company} />
                 </Tab.Pane>
               ))}
