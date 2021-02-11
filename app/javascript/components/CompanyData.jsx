@@ -1,12 +1,13 @@
 import React from 'react';
 import { Tab, Tabs, Row, Col, Nav, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Employee from '../components/Employee';
 import Interview from '../components/Interview';
 import Profile from '../components/Profile';
 import Application from '../components/Application';
 
 function CompanyData(props) {
-  let editProfileUrl = `/companies/${props.data.id}/profile/edit`;
+  let editProfileUrl = `/companies/${props.data.id}/edit`;
   let addEmployeeUrl = `/companies/${props.data.id}/employees/create`;
   let addApplicationUrl = `/companies/${props.data.id}/applications/create`;
   let addInterviewUrl = `/companies/${props.data.id}/interviews/create`;
@@ -15,7 +16,7 @@ function CompanyData(props) {
     <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
       <Tab eventKey="profile" title="Company Profile">
         Under this tab will be a textarea where I can edit rich text
-        <Button variant="primary" href={editProfileUrl}>Edit company profile</Button>
+        <Button as={Link} variant="primary" to={editProfileUrl}>Edit company profile</Button>
         <Profile
           name={props.data.name}
           companyType={props.data.companyType}
