@@ -12,11 +12,18 @@ class Api::CompaniesController < ApplicationController
     else
       render json: company.errors
     end
-
   end
 
   def show
     company = Company.find(params[:id])
+
+    render json: company
+  end
+
+  def update
+    company = Company.find(params[:id])
+
+    company.update(company_params)
 
     render json: company
   end
