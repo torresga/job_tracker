@@ -12,8 +12,6 @@ class Companies extends React.Component {
   }
 
   componentDidMount() {
-    // do another ajax request in here to get the data from "/companies"
-
     let request = new XMLHttpRequest();
     let self = this;
     request.open('GET', '/api/companies');
