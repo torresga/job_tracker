@@ -31,9 +31,8 @@ function App() {
         <Switch>
           <Route path="/applications" component={Applications} />
           <Route path="/interviews" component={Interviews} />
-          <Route path="/companies/new">
-            <NewCompany />
-          </Route>
+          <Route exact path="/companies/new" component={NewCompany} />
+          <Route exact path="/companies/:id/edit" component={NewCompany} />
           <Route path="/">
             <Companies />
           </Route>
