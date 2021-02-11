@@ -24,7 +24,8 @@ class NewCompany extends React.Component {
   onSubmit() {
     event.preventDefault();
 
-    console.log(this.state);
+    let endpoint = this.props.match.params.id ? `/api/companies/${this.props.match.params.id}` : "/api/companies";
+    let requestVerb = endpoint == "/api/companies" ? "POST" : "PUT";
 
     // 1. Get the CSRF token on the webpage
     // 2. Create a new XMLHttpRequest
@@ -35,7 +36,7 @@ class NewCompany extends React.Component {
     const token = document.querySelector("meta[name='csrf-token']").content;
 
     let request = new XMLHttpRequest();
-    request.open('POST', '/api/companies');
+    request.open(requestVerb, endpoint);
     request.setRequestHeader('Content-Type', 'application/json');
     request.setRequestHeader('X-CSRF-Token', token);
 
